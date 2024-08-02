@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        .hehe{
+            font-size: 30px;
+            margin-top: 7px;
+            margin-bottom: 7px;
+            padding-left: 15px;
+            font-weight: 900;
+            color: #feb9c7;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            animation: pulse 2.5s infinite;
+        }
+        @keyframes pulse {
+            0% {
+              color: #feb9c7;
+            }
+
+            50% {
+                color: #b0d8ef;
+            }
+
+            100% {
+              color: #feb9c7;
+            }
+          }
+        .cal {
+            width: 510px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(47, 40, 40, 0.6);
+
+        }
+        button {
+            width: 115px;
+            height: 115px;
+            font-size: 23px;
+            margin-top: 10px;
+            font-weight: 900;
+            color: rgb(96, 79, 67);
+            cursor: pointer;
+            border-style: none;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(47, 40, 40, 0.4);
+            transition: 0.5s;
+            
+        }
+        button:hover {
+            border-radius: 40px;
+            color: black;
+        }
+        button:active {
+            opacity: 0.3;
+            box-shadow: 0 2px 4px rgba(27, 23, 23, 1);
+            color :rgb(96, 79, 67);
+        }
+        .iw {
+            margin-left: 2.5px;
+            margin-right: 2.5px;
+        }
+        input {
+            width: 485px;
+            color: rgb(96, 79, 67);
+            margin-left: 10px;
+            margin-right:10px;
+            height: 60px;
+            border: none;
+            font-weight: 900 ;
+            font-size: 20px;
+            border-radius: 20px; 
+            box-shadow: 0 2px 4px rgba(47, 40, 40, 0.4);
+        }
+        .left {
+            margin-left: 10px;
+            margin-right: 2.5px;
+        }
+        .right {
+            margin-right: 10px;
+            margin-left: 2.5px;
+        }
+    </style>
+</head>
+<body>
+<div style="background: linear-gradient(to top, #c4dff4, #f9f9f9);" class="cal">
+    <p class="hehe">Ladya's Calculator</p>
+    <input type="text" id="result" style="background: linear-gradient(to right, #feb9c7, #f6f6dd);">
+    <div class="line1">
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="left" onclick="number(1)">1</button>
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="iw" onclick="number(2)">2</button>
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="iw" onclick="number(3)">3</button>
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="right" onclick="clearresult()">C</button>
+    </div>
+    
+    <div class="line2">
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="left" onclick="number(4)">4</button>
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="iw" onclick="number(5)">5</button>
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="iw" onclick="number(6)">6</button>
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="right" onclick="operator('+')">+</button>
+    </div>
+
+    <div class="line3">
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="left" onclick="number(7)">7</button>
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="iw" onclick="number(8)">8</button>
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="iw" onclick="number(9)">9</button>
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="right" onclick="operator('-')">-</button>
+    </div>
+    
+    <div class="line4">
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="left" onclick="operator('*')">x</button>
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="iw" onclick="number(0)">0</button>
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="iw" onclick="operator('/')">:</button>
+        <button style="background: linear-gradient(to right, #fbced7, #F5F5DC);" class="right" onclick="result()">=</button>
+    </div>
+</div>
+
+    <script>
+        function number(n){
+            document.getElementById('result').value += n
+        }
+        function operator(a){
+            document.getElementById('result').value += a
+        }
+        function clearresult(c){
+            document.getElementById('result').value =''
+        }
+        function result(r){
+            var result = eval(document.getElementById('result').value);
+            document.getElementById('result').value = result;
+        }
+    </script>
+</body>
+</html>
